@@ -21,9 +21,3 @@ resource "aws_route_table" "private_route_table" {
 
   timeouts {}
 }
-
-# resource "aws_route" "private_nat_route" {
-#   route_table_id         = aws_route_table.private_route_table.id
-#   destination_cidr_block = "0.0.0.0/0"
-#   nat_gateway_id         = var.nat_gateway
-# }
