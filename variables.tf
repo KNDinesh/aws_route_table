@@ -9,7 +9,17 @@ variable "project_name" {
   type        = string
 }
 
-variable "nat_gateway" {
-  description = "The ID of the NAT gateway"
-  type        = string
+variable "nat_gateway_id" {
+  description = "The ID of the NAT gateway (optional)"
+  type = string
+}
+
+variable "type" {
+  description = "Type of route table (public or private)"
+  type = string
+}
+
+variable "internet_gateway_id" {
+  description = "The ID of the internet gateway"
+  type = string
 }
