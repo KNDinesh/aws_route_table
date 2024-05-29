@@ -9,5 +9,6 @@ resource "aws_route_table" "route_table" {
 
 resource "aws_route" "public_route" {
   route_table_id = aws_route_table.route_table.id
-  gateway_id     = var.type == "public" ? module.nat_gateway.nat_gateway_id : var.internet_gateway_id
+  gateway_id     = var.type == "public" ? var.nat_gateway_id : var.internet_gateway_id
+  destination_cidr_block = "0.0.0.0/0"
 }
